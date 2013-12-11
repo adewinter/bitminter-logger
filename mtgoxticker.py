@@ -13,7 +13,7 @@ LOG_FILE_NAME='mtgoxticker.log'
 
 ### LOGGING CONF################################
 logging.basicConfig()
-logger = logging.getLogger('bitminter.py')
+logger = logging.getLogger('mtgoxticker')
 logger.setLevel('DEBUG')
 # create console handler and set level to debug
 ch = logging.StreamHandler()
