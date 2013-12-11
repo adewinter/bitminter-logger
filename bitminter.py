@@ -3,21 +3,29 @@ import requests
 import logging
 
 REFRESH_TIME_SECONDS=60
+LOG_FILE_NAME='bitminter.log'
 
 
 ### LOGGING CONF################################
-logging.basicConfig(filename='bitminter.log')
+logging.basicConfig()
 logger = logging.getLogger('bitminter.py')
 logger.setLevel('DEBUG')
 # create console handler and set level to debug
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
+# create file handler
+fh = logging.FileHandler(LOG_FILE_NAME)
+fh.setLevel(logging.DEBUG)
 # create formatter
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 # add formatter to ch
 ch.setFormatter(formatter)
+#add formatter to fh
+fh.setFormatter(formatter)
 # add ch to logger
 logger.addHandler(ch)
+# and fh
+logger.addHandler(fh)
 #################################################
 
 def go():
